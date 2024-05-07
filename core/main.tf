@@ -1,3 +1,9 @@
+module "google_apis" {
+  ## APIs Services to enable.
+  source          = "./apis"
+  project_id      = var.project_id
+  gcp_service_list = var.gcp_service_list
+}
 module "google_networks" {
   ## VPC & Subnet
   source          = "./network"
@@ -5,6 +11,7 @@ module "google_networks" {
   project_id      = var.project_id
   region          = var.region
   network_name    = var.network_name
+  depends_on = [module.google_apis]
 }
 
 module "google_router_nat" {
@@ -21,8 +28,7 @@ module "google_router_nat" {
 }
 
 module "google_workbench_iam" {
-   source         = "./iam"
-   project_id     = var.project_id
-
+   source           = "./iam"
+   project_id       = var.project_id
 }
 

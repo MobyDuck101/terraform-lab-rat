@@ -37,3 +37,8 @@ output "out_sa_email" {
   # References child Module output Variable
   value       = module.google_workbench_iam.out_sa_email
 }
+output "out_service" {
+  description = "Enabled API Service"
+  # References child Module output Variable
+  value       = module.google_apis.out_service
+}

@@ -40,6 +40,7 @@ module "google_core" {
   subnet_name     = var.subnet_name
   router_name     = var.router_name
   router_nat_name = var.router_nat_name
+  gcp_service_list = var.gcp_service_list
 }
 
 module "google_vertex" {

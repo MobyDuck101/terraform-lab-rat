@@ -59,3 +59,13 @@ variable "instance_service_account_description" {
   type        = string
   default     = "Service Account for Vertex Workbench Instance. Roles allocated according to Least Privilege"
 }
+
+variable "gcp_service_list" {
+  type        = list(string)
+  description = "The list of apis necessary for the project"
+  default     = []
+}
+
+
+
+

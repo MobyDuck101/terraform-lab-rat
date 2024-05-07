@@ -9,3 +9,12 @@ router_name                 = "nlp-dev-6aae-router"
 router_nat_name             = "nlp-dev-6aae-nat" 
 workbench_instance_name     = "lab-rat-101"
 instance_machine_type       = "e2-standard-4"
+## APIs to Enable for GenAI
+gcp_service_list = [ 
+    "dns.googleapis.com",
+    "networkconnectivity.googleapis.com",
+    "notebooks.googleapis.com",
+    "aiplatform.googleapis.com",
+    "visionai.googleapis.com",
+]
+
