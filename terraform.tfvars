@@ -16,5 +16,6 @@ gcp_service_list = [
     "notebooks.googleapis.com",
     "aiplatform.googleapis.com",
     "visionai.googleapis.com",
+    "generativelanguage.googleapis.com",
 ]
 
