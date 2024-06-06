@@ -45,3 +45,8 @@ variable "gcp_service_list" {
   description = "The list of apis necessary for the project"
   default     = []
 }
+
+variable "source_range" {
+  type        = string
+  description = "Source ranges to which the firewall will apply. Expressed in CIDR format."
+}

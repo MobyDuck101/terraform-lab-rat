@@ -41,6 +41,7 @@ module "google_core" {
   router_name     = var.router_name
   router_nat_name = var.router_nat_name
   gcp_service_list = var.gcp_service_list
+  source_range = var.source_range
 }
 
 module "google_vertex" {
@@ -56,5 +57,17 @@ module "google_vertex" {
   main_zone               = var.main_zone
   workbench_instance_name = var.workbench_instance_name
   instance_service_account_email = module.google_core.out_sa_email
+}
+
+module "google_localdev" {
+  source = "./localdev"
+
+  project_id = var.project_id
+  network_name    = var.network_name
+  gcp_localdev_list = var.gcp_localdev_list
+  source_ranges_localdev = var.source_ranges_localdev
+  localdev_service_account_description = var.localdev_service_account_description
+  localdev_service_account_name = var.localdev_service_account_name
+  depends_on = [module.google_core]
 }
 

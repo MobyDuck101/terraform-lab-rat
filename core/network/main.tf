@@ -24,7 +24,7 @@ gcloud compute networks subnets create nlp-dev-6aae-subnet \
 */
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork 
 resource "google_compute_subnetwork" "vpc_network_subnet" {
-  ip_cidr_range              = "10.0.0.0/24"
+  ip_cidr_range              = var.source_range
   name                       = var.subnet_name
   network                    = var.network_name
   private_ip_google_access   = "true"

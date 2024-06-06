@@ -17,3 +17,8 @@ variable "subnet_name" {
   type        = string
   description = "Name of VPC Subnet"
 }
+
+variable "source_range" {
+  type        = string
+  description = "Source ranges to which the firewall will apply. Expressed in CIDR format."
+}

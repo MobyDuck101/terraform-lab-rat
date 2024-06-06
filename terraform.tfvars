@@ -19,3 +19,10 @@ gcp_service_list = [
     "generativelanguage.googleapis.com",
 ]
 
+gcp_localdev_list = [ 
+    "iap.googleapis.com",
+]
+# IP Address Ranges for VPC Network
+source_range               = "10.0.0.0/24"
+source_ranges_localdev      = ["10.0.0.0/24"]
+
