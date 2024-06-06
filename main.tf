@@ -44,6 +44,14 @@ module "google_core" {
   source_range = var.source_range
 }
 
+/*
+
+Build Workbench Instance & Associated Services
+
+     1. WorkBench Instance (Notebooks &c are deprecated)
+     2. Searvh Engine
+
+*/
 module "google_vertex" {
   source = "./vertex"
 
@@ -57,8 +65,14 @@ module "google_vertex" {
   main_zone               = var.main_zone
   workbench_instance_name = var.workbench_instance_name
   instance_service_account_email = module.google_core.out_sa_email
+  depends_on = [module.google_core]
 }
 
+/*
+
+Enable Local Developent Access.
+
+*/
 module "google_localdev" {
   source = "./localdev"
 
@@ -68,6 +82,6 @@ module "google_localdev" {
   source_ranges_localdev = var.source_ranges_localdev
   localdev_service_account_description = var.localdev_service_account_description
   localdev_service_account_name = var.localdev_service_account_name
-  depends_on = [module.google_core]
+  depends_on = [module.google_vertex]
 }
 
