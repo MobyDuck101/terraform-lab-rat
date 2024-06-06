@@ -20,4 +20,9 @@ resource "google_project_iam_member" "wblocaldev_sa_iam_2" {
   role       = "roles/compute.instanceAdmin.v1"
   depends_on = [google_service_account.workbanch_localdev_sa, ]
 }
+## And these. 
+# roles/iam.serviceAccountUser
+# roles/compute.osLoginExternalUser
+# roles/compute.osLogin
+# roles/compute.osAdminLogin
 
